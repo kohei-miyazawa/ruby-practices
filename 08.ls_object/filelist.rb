@@ -10,7 +10,7 @@ class Ls
 
     def initialize(option, pathname)
       pattarn = pathname.join('*')
-      files = option.all? ? Dir.glob(pattarn, File::FNM_DOTMATCH) : Dir.glob(pattarn)
+      files = option.all? ? Dir.glob(pattarn, ::File::FNM_DOTMATCH) : Dir.glob(pattarn)
       @files = files.sort.map { |file| Ls::File.new(file) }
       @files.reverse! if option.reverse?
     end
