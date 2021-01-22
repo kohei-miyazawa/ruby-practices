@@ -9,4 +9,4 @@ option = Option.new
 path = option.extras[0] || '.'
 pathname = Pathname(path)
 
-puts Ls.new(option, pathname).call if __FILE__ == $PROGRAM_NAME
+Ls.new(option, pathname).call if __FILE__ == $PROGRAM_NAME

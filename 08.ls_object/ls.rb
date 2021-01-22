@@ -3,6 +3,8 @@
 require './filelist'
 
 class Ls
+  attr_reader :option
+
   def initialize(option, pathname)
     @option = option
     @pathname = pathname
@@ -10,6 +12,6 @@ class Ls
   end
 
   def call
-    @file_list.text(@option)
+    @file_list.text(option)
   end
 end
