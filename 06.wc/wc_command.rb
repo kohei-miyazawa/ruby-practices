@@ -54,4 +54,18 @@ def output_total(output_list, option)
   print " total\n"
 end
 
-output_for_arguments(option)
+def output_for_standard_input(option)
+  f = $stdin.readlines
+  print f.size.to_s.rjust(8)
+  unless option.lists?
+    print f.join.split.size.to_s.rjust(8)
+    print f.join.size.to_s.rjust(8)
+  end
+  print "\n"
+end
+
+if $stdin.tty?
+  output_for_arguments(option)
+else
+  output_for_standard_input(option)
+end
