@@ -6,9 +6,9 @@ class Wc
 
     def initialize(file)
       @name = file
-      @lines = IO.readlines(file).size.to_s
-      @words = IO.read(file).split(' ').size.to_s
-      @size = ::File.stat(file).size.to_s
+      @lines = IO.readlines(file).size
+      @words = IO.read(file).split(' ').size
+      @size = ::File.stat(file).size
     end
   end
 end
